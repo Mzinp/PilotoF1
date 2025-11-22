@@ -1,0 +1,152 @@
+:root {
+    --f1-red: #e10600;
+    --f1-dark: #121212; 
+    --f1-light: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Centralização com Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* MANTÉM HIDDEN no body para o vídeo de fundo fixo */
+    overflow: hidden; 
+    position: relative; 
+}
+
+/* ===================================== */
+/* --- VÍDEO DE FUNDO (ROTAÇÃO 270°) --- */
+/* ===================================== */
+
+video { 
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    
+    /* Invertemos a largura/altura da viewport para garantir a cobertura após a rotação */
+    min-width: 100vh; 
+    min-height: 100vw; 
+    
+    width: auto;
+    height: auto;
+
+    object-fit: cover; 
+    object-position: center center; 
+    
+    /* Rotação para 'ficar em pé' corretamente */
+    transform: translate(-50%, -50%) rotate(270deg); 
+    
+    z-index: -2; 
+}
+
+/* Overlay Escuro para Legibilidade */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Cor preta com 60% de opacidade */
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: -1; 
+}
+
+
+/* ===================================== */
+/* --- ESTILO DO FORMULÁRIO (FINAL) --- */
+/* ===================================== */
+.register-container {
+    /* CORREÇÃO 1: Transparência aumentada (40%) */
+    background-color: rgba(255, 255, 255, 0.4); 
+    
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); 
+    width: 100%;
+    max-width: 450px;
+    
+    /* CORREÇÃO 2: Max-height alto e overflow: auto para mostrar todos os campos */
+    max-height: 90vh; /* Permite que o formulário ocupe quase toda a tela */
+    overflow-y: auto; /* Adiciona a rolagem SOMENTE se o formulário for maior que 90vh */
+
+    position: relative; 
+    z-index: 10; 
+    border: 3px solid var(--f1-red);
+}
+
+.register-container h2 {
+    text-align: center;
+    color: var(--f1-red);
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--f1-dark); 
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Quase branco sólido */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 1em;
+}
+
+.form-group select {
+    height: 40px; 
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--f1-red);
+    color: var(--f1-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.submit-btn:hover {
+    background-color: #c00500;
+    transform: translateY(-1px);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.login-link a {
+    color: var(--f1-red);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.login-link a:hover {
+    color: var(--f1-dark);
+}

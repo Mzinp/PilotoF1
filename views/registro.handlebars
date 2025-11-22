@@ -1,0 +1,58 @@
+    <link rel="stylesheet" href="/css/registro.css">
+
+    <video id="video-2" autoplay loop muted plays-inline>
+        <source src="/video/video.mp4" type="video/mp4">
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+
+    <div class="register-container">
+        <h2>Personalize Sua Experiência F1 🛠️</h2>
+        <p class="subtitle">Suas escolhas definirão o visual do site!</p>
+        
+        <form id="f1-register-form" action="/registro/add" method="post">
+            
+            <div class="form-group">
+                <label for="reg-name">Nome:</label>
+                <input type="text" id="reg-name" required placeholder="Seu nome aqui" name="nome">
+            </div>
+            
+            <div class="form-group">
+                <label for="reg-email">Email:</label>
+                <input type="email" id="reg-email" required placeholder="seu.email@f1.com" name="email"> 
+            </div>
+
+            <div class="form-group">
+                <label for="reg-password">Senha:</label>
+                <input type="password" id="reg-password" required placeholder="Mínimo 6 caracteres" name="senha">
+            </div>
+
+            <div class="form-group">
+                <label for="favorite-team">Equipe Favorita:</label>
+                <select id="favorite-team" name="equipe" required>
+                    <option value="">Selecione a Equipe</option>
+                    <option value="RedBull">Red Bull Racing</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="McLaren">McLaren</option>
+                    <option value="AstonMartin">Aston Martin</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="favorite-driver">Piloto Favorito:</label>
+                <select id="favorite-driver" name="piloto" required>
+                    <option value="">Selecione o Piloto</option>
+                    <option value="VER">Max Verstappen (VER)</option>
+                    <option value="LEC">Charles Leclerc (LEC)</option>
+                    <option value="HAM">Lewis Hamilton (HAM)</option>
+                    <option value="NOR">Lando Norris (NOR)</option>
+                    <option value="ALO">Fernando Alonso (ALO)</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="submit-btn">Salvar Preferências e Entrar</button>
+
+            <p class="login-link">Já tem conta? <a href="/">Ir para o site</a></p>
+        </form>
+    </div>
+<script src="/js/registro.js"></script>
